@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar-custom {
+      padding: 10px 20px;
+    }
+    .navbar-brand img {
+      width: 40px; /* Adjust the size of the logo image as needed */
+      margin-right: 10px;
+    } 
+    .banner {
+    position: relative;
+    background-image: url('images/bs4.avif'); /* Replace with your banner image URL */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .banner .btn {
+    margin: 0 10px; /* Space between buttons */
+  }
+
+  /* Mobile version adjustments */
+  @media (max-width: 768px) {
+    .banner {
+      height: 300px;
+      text-align: center;
+    }
+
+    .banner h1 {
+      font-style: oblique;
+      font-size: 1.4rem; /* Smaller title for mobile */
+    }
+
+    .banner .btn {
+      margin: 10px 0; /* Space between buttons in mobile view */
+    }
+
+    .arrow {
+      font-size: 1.5rem; /* Smaller arrow size for mobile */
+    }
+  }
+
+  /* Desktop version adjustments */
+  @media (min-width: 600px) {
+    .banner h1 {
+      font-size: 1.6rem;
+      font-style: oblique;
+      position: relative; 
+      right: 40px; 
+      width: 200px;/* Larger title for desktop */
+    }
+
+    .banner .btn {
+      width: 200px;
+      position: relative;
+      right: 50px;
+      font-size: 1.1rem;
+    }
+    }
+    <style>
+    .left-heading {
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 700px) {
+        .left-heading h1 {
+            font-size: 2.5rem; /* Smaller heading font for mobile */
+        }
+
+        .left-heading p {
+            font-size: 1rem; /* Smaller text on mobile */
+        }
+
+        .card-img-top {
+            height: 180px !important; /* Adjust image height on mobile */
+        }
+
+        .btn {
+            width: 100%; /* Make the button full width on mobile */
+        }
+    }
+
+    @media (min-width: 700px) {
+        .left-heading h1 {
+            font-size: 3rem; /* Larger heading font for desktop */
+        }
+
+        .left-heading p {
+            font-size: 1.2rem; /* Larger text for desktop */
+        }
+
+        .card-img-top {
+            height: 200px !important; /* Image height adjustment for desktop */
+        }
+    }
+    .container-custom {
+        background-color: hsl(0, 0%, 98%);
+        border-radius: 8px;
+        padding: 40px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .container-custom {
+            padding: 20px;
+        }
+
+        .left-text h2 {
+            font-size: 1.5rem;
+        }
+
+        .left-text h3 {
+            font-size: 1rem;
+        }
+
+        .btn {
+            width: 100%; /* Full-width button on mobile */
+        }
+
+        .image-container img {
+            max-height: 200px; /* Smaller image on mobile */
+        }
+
+        .youtube-btn {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .container-custom {
+            padding: 40px;
+        }
+
+        .left-text h2 {
+            font-size: 2.5rem;
+        }
+
+        .left-text h3 {
+            font-size: 1.2rem;
+        }
+
+        .youtube-btn {
+            font-size: 2rem;
+        }
+    }
+    .hero-image {
+        background-image: url('images/bsr13.avif'); /* Replace with your image URL */
+        height: 400px;
+        width: 100%;
+        max-width: 1300px;
+        border-radius: 8px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        margin: auto;
+    }
+
+    .hero-text {
+        color: #020202;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .btn-custom {
+        margin-top: 20px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .hero-text h1 {
+            font-size: 1.8rem;
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+        }
+
+        .btn-custom {
+            width: 100%; /* Make buttons full width on smaller screens */
+        }
+    }
+
+    @media (min-width: 768px) {
+        .hero-text h1 {
+            font-size: 3rem;
+        }
+
+        .hero-text p {
+            font-size: 1.5rem;
+        }
+
+        .btn-custom {
+            width: auto;
+        }
+    }
+    /* Box Container */
+    .box1 {
+        border: 1px solid #ddd;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+
+    .box1 img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .box1 h5 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .box1 p {
+        font-size: 14px;
+        color: #777;
+    }
+
+    /* Image size responsive */
+    .box1 img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+    }
+
+    /* Make sure the box sticks out of the image */
+    .box1-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #f7f7f7;
+        z-index: -1;
+    }
+
+    /* Add hover effect on box */
+    .box1:hover {
+        transform: translateY(-5px); /* Subtle lifting effect */
+    }
+    /* Footer styling */
+.footer {
+  position: relative;
+  top: 90px;
+  background-color: hwb(90 94% 5%);
+  color: hsl(0, 0%, 1%);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer section */
+.footer-section {
+  flex: 1;
+  margin: 1rem;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  color: hsl(0, 0%, 3%);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section p, .footer-section ul {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 0.5rem 0;
+}
+
+.footer-section ul li a {
+  color: #080808;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: rgb(2, 2, 2);
+}
+
+/* Social Media Icons */
+.footer-section.social a {
+  color: hsl(0, 0%, 3%);
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.footer-section.social a:hover {
+  color: hsl(0, 0%, 2%);
+}
+
+/* Footer bottom text */
+.footer-bottom {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: hsl(0, 0%, 2%);
+}
+</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
+  <div class="container-fluid">
+    <!-- Logo and Brand Name -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/logo.jpeg" alt="Logo"> <!-- Replace "logo.png" with your image source -->
+      <span>work horse</span>
+    </a>
+    <!-- Toggler for mobile view -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutus.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="servicess.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact us.html">contact us</a>
+        </li>
+      </ul>
+      <!-- Search Button -->
+      <form class="d-flex ms-3">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="banner container-fluid mt-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6 text-center banner-content">
+        <h1>Agri Tech!</h1>
+        <div class="mt-3">
+          <a href="#" class="btn btn-primary">Get Started</a>
+          <span class="d-block mt-2">Watch a new video intro</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <!-- Left Side Heading -->
+    <div class="left-heading text-center text-md-left">
+        <h1 class="display-4" style="color: chartreuse;">Services</h1>
+        <p class="lead mx-auto" style="width: 100%; max-width: 800px;">AgriTech services focus on using technology to enhance agricultural productivity, sustainability, and efficiency. This includes precision farming, smart irrigation, crop monitoring, supply chain management, and predictive analytics to help farmers optimize yield, reduce costs, and improve decision-making.</p>
+    </div>
+
+    <!-- Right-side Containers -->
+    <div class="row">
+        <!-- Container 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="images/im98.avif" class="card-img-top" alt="Image 1"> <!-- Replace with your image URL -->
+                <div class="card-body text-center">
+                    <h5 class="card-title">Precision Agriculture</h5>
+                    <p class="card-text">By using satellite imagery, drones, and IoT sensors, farmers can monitor crop health, soil quality, and moisture levels in real time.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="images/im97.avif" class="card-img-top" alt="Image 2" style="height: 155px;"> <!-- Replace with your image URL -->
+                <div class="card-body text-center">
+                    <h5 class="card-title">Smart Irrigation Systems</h5>
+                    <p class="card-text">Water scarcity is a major concern in farming. Smart irrigation technologies adjust water distribution based on real-time data.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="images/im94.avif" class="card-img-top" alt="Image 3" style="height: 155px;"> <!-- Replace with your image URL -->
+                <div class="card-body text-center">
+                    <h5 class="card-title">Predictive Analytics for Crop Planning</h5>
+                    <p class="card-text">AI and machine learning algorithms help farmers predict weather patterns, crop diseases, and market trends.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row align-items-center">
+                <!-- Left Text Section -->
+                <div class="col-md-6 text-center text-md-left">
+                    <h2 class="text-success">What is Agritech?</h2>
+                    <h3 class="text-light" style="font-size: 15px; color: #000;"></h3>
+                    <h2 class="text-success mt-4">About Us!</h2>
+                    <h5>Transforming Agriculture with Technology</h5>
+                    <p style="width: 100%; max-width: 700px; margin: auto;">In today's rapidly evolving world, agri-tech innovations are helping farmers optimize yields, reduce waste, and ensure food security. By integrating data-driven insights, IoT devices, and sustainable practices, the agricultural sector is poised to feed a growing population more efficiently and responsibly.</p>
+                    <a href="#" class="btn btn-primary mt-3">Explore More</a>
+                </div>
+                
+                <!-- Right Image Section -->
+                <div class="col-md-6 text-center mt-4 mt-md-0">
+                    <div class="image-container">
+                        <img src="images/bsr98.avif" alt="Placeholder Image" class="img-fluid rounded-3" style="max-height: 270px; width: auto;">
+                    </div>
+                    <div class="youtube-btn mt-3">
+                        <i class="bi bi-youtube" style="font-size: 2rem; color: red;"></i> <!-- Using Bootstrap Icons -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center my-5">
+            <!-- Hero Image with Text Section -->
+            <div class="hero-image d-flex justify-content-center align-items-center position-relative">
+                <div class="hero-text text-center text-light">
+                    <h1>ECO FRIENDLY</h1>
+                    <p>Nonprofit WordPress Theme</p>
+                    <button class="btn btn-primary btn-custom mb-2">Find Out More</button>
+                    <button class="btn btn-success btn-custom">Join Us</button>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+                <!-- Box 1 -->
+                <div class="col">
+                    <div class="box1 text-center">
+                        <img src="images/bsr15.avif" alt="Logo" class="img-fluid mb-3">
+                        <h5>Recycling</h5>
+                        <p>Waste management</p>
+                    </div>
+                </div>
+                <!-- Box 2 -->
+                <div class="col">
+                    <div class="box1 text-center">
+                        <img src="images/bsr16.jpg" alt="Logo" class="img-fluid mb-3">
+                        <h5>Wind energy</h5>
+                        <p>Polar, Prevailing, Tropical</p>
+                    </div>
+                </div>
+                <!-- Box 3 -->
+                <div class="col">
+                    <div class="box1 text-center">
+                        <img src="images/bsr17.avif" alt="Logo" class="img-fluid mb-3">
+                        <h5>Pure water</h5>
+                        <p>Save water resources</p>
+                    </div>
+                </div>
+                <!-- Box 4 -->
+                <div class="col">
+                    <div class="box1 text-center">
+                        <img src="images/bsr18.jpg" alt="Logo" class="img-fluid mb-3">
+                        <h5>Solar panels</h5>
+                        <p>Save water resources</p>
+                    </div>
+                </div>
+                <!-- Box 5 -->
+                <div class="col">
+                    <div class="box1 text-center">
+                        <img src="images/bsr19.avif" alt="Logo" class="img-fluid mb-3">
+                        <h5>Forest planting</h5>
+                        <p>Make plants alive</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--contact container-->
+        <div style="position: relative; bottom: 0px;" class="container mt-5 p-4 border rounded" style="height: 100px;">
+            <div class="row align-items-center h-100">
+                <!-- Left Section: Heading and Subheading -->
+                <div class="col-12 col-md-8">
+                    <h1 class="display-4">Agri Tech Reviews</h1>
+                    <p class="lead">1000+ Reviews</p>
+                </div>
+                <!-- Right Section: Button -->
+                <div class="col-12 col-md-4 text-md-right mt-3 mt-md-0">
+                    <button class="btn btn-primary">Review Us!</button>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                <!-- Review Box 1 -->
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="p-4 border rounded text-center h-100">
+                        <!-- Review Stars -->
+                        <p class="text-warning">★★★★★</p>
+        
+                        <!-- Main Heading -->
+                        <h4>Sunitha</h4>
+        
+                        <!-- Logo Image -->
+                        <img src="images/rr1.avif" alt="Logo" class="mb-3" style="height: 30px; width: 30px;">
+        
+                        <!-- Secondary Heading -->
+                        <h5>10 June</h5>
+        
+                        <!-- Content Section -->
+                        <p class="text-muted" style="font-size: 12px;">Comprehensive farm management, integrates well with Trimble hardware, data-driven insights</p>
+        
+                        <!-- Read More Button -->
+                        <button class="btn btn-primary mb-3">Read More</button>
+                    </div>
+                </div>
+        
+                <!-- Review Box 2 -->
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="p-4 border rounded text-center h-100">
+                        <p class="text-warning">★★★★★</p>
+                        <h4>Deepak</h4>
+                        <img src="images/rr3.avif" alt="Logo" class="mb-3" style="height: 30px; width: 30px;">
+                        <h5>11 July</h5>
+                        <p class="text-muted" style="font-size: 12px;">I was very impressed it Reduces chemical use, autonomous operation, cost savings on</p>
+                        <button class="btn btn-primary mb-3">Read More</button>
+                    </div>
+                </div>
+        
+                <!-- Review Box 3 -->
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="p-4 border rounded text-center h-100">
+                        <p class="text-warning">★★★★★</p>
+                        <h4>Spoorthy</h4>
+                        <img src="images/rr2.jpg" alt="Logo" class="mb-3" style="height: 30px; width: 30px;">
+                        <h5>11 October</h5>
+                        <p class="text-muted" style="font-size: 12px;">Easy to use, reliable, highly customizable, great customer service.</p>
+                        <button class="btn btn-primary mb-3">Read More</button>
+                    </div>
+                </div>
+        
+                <!-- Review Box 4 -->
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="p-4 border rounded text-center h-100">
+                        <p class="text-warning">★★★★★</p>
+                        <h4>Subbu</h4>
+                        <img src="images/rr4.avif" alt="Logo" class="mb-3" style="height: 30px; width: 30px;">
+                        <h5>1 December</h5>
+                        <p class="text-muted" style="font-size: 12px;">Real-time data access, intuitive app, detailed reports</p>
+                        <button class="btn btn-primary mb-3">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center my-5" style="background-color: #f7f7f7; height: 400px;">
+            <!-- Main Heading -->
+            <h1 class="mt-3" style="font-size: 22px;">Still need help?</h1>
+            
+            <!-- Subheading -->
+            <p class="lead">Reach out to the community and contact us for more details</p>
+        
+            <!-- Two Boxes -->
+            <div class="row mt-4">
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="d-flex align-items-start">
+                        <!-- Logo Image in the left corner -->
+                        <img src="images/ss1.avif" alt="Logo 1" class="logo" style="height: 30px; width: 30px;">
+                        <div>
+                            <!-- Box Heading -->
+                            <h4>Ask the Community</h4>
+                            <!-- Box Subheading -->
+                            <p>Join our community to connect, learn, and grow together! Discover new opportunities, share your insights, and be part of something impactful.</p>
+                            <!-- Box Text -->
+                            <h6 class="text-primary">Go to community</h6>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="d-flex align-items-start">
+                        <!-- Logo Image in the left corner -->
+                        <img src="images/ss2.avif" alt="Logo 2" class="logo" style="height: 30px; width: 30px;">
+                        <div>
+                            <!-- Box Heading -->
+                            <h4>Contact Us</h4>
+                            <!-- Box Subheading -->
+                            <p>Got questions or need assistance? Reach out to us through our contact form or email, and our team will be happy to help you!</p>
+                            <!-- Box Text -->
+                            <h4 class="text-primary" style="font-size: 15px;">Get in Touch</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer section -->
+<footer class="footer">
+    <div class="footer-content">
+      <!-- Company Information -->
+      <div class="footer-section about">
+        <h3>About Work Horse</h3>
+        <p>Work Horse is dedicated to transforming agriculture with sustainable practices and innovative solutions. Join us in building a better future for farming and food security.</p>
+      </div>
+  
+      <!-- Useful Links -->
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Social Media Links -->
+      <div class="footer-section social">
+        <h3>Follow Us</h3>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  
+    <!-- Footer bottom section -->
+    <div class="footer-bottom">
+      &copy; 2024 Work Horse | All Rights Reserved
+    </div>
+  </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+        
+        
+        

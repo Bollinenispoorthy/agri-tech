@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>about us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar-custom {
+      padding: 10px 20px;
+    }
+    .navbar-brand img {
+      width: 40px; /* Adjust the size of the logo image as needed */
+      margin-right: 10px;
+    }
+    /* Banner Container Styling */
+    .banner-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+      background: url('images/bs8.avif') center center / cover no-repeat; /* Replace with your image */
+      max-width: 100%;
+      margin: auto;
+      position: relative;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4); /* Dark overlay with 40% opacity */
+      z-index: 1;
+    }
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      max-width: 100%;
+      padding: 0 15px;
+    }
+    .banner-content h1 {
+      color: chartreuse;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .banner-content p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    .btn-custom {
+      background-color: chartreuse;
+      border-color: chartreuse;
+    }
+    /* Ensure text and button are aligned and centered for smaller screens */
+    .banner-content p {
+      max-width: 80%;
+      margin: auto;
+    }
+    /* Adjust button for mobile and larger screens */
+    @media (max-width: 768px) {
+      .banner-container {
+        height: 300px;
+      }
+      .banner-content h1 {
+        font-size: 2rem;
+      }
+      .banner-content p {
+        font-size: 1rem;
+      }
+      .banner-content button {
+        margin-top: 20px;
+      }
+    }
+    /* Container for content and image */
+    .content-image-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+    }
+    .left-content {
+      max-width: 600px;
+    }
+    .right-image img {
+      width: 100%;
+      max-width: 500px; /* Adjust as needed */
+      height: auto;
+      border-radius: 8px;
+    }
+    .tick-button-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .tickmark-icon {
+      font-size: 1.2rem;
+      color: green;
+    }
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+      .content-image-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .left-content {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .right-image img {
+        max-width: 100%;
+      }
+    }
+    /* Container for image and text overlay */
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 300px; /* Adjust height for better visibility */
+      margin: 20px 0; /* Center the container */
+      overflow: hidden; /* Ensure children are contained */
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure the image covers the area */
+    }
+    .text-overlay {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+      z-index: 2;
+    }
+    .horizontal-line {
+      width: 100px;
+      height: 7px;
+      background-color: hwb(106 5% 4%);
+      margin-bottom: 10px;
+    }
+    .pattern-names {
+      position: absolute;
+      top: 180px;
+      left: 20px;
+      color: hsl(100, 50%, 98%);
+      z-index: 2;
+    }
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .image-container {
+        height: 250px; /* Adjust for mobile screens */
+      }
+      .pattern-names {
+        top: 100px;
+        left: 0;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .pattern-names ul {
+        padding-left: 0;
+      }
+      .text-overlay h1 {
+        font-size: 1.5rem; /* Adjust font size for mobile */
+      }
+      .text-overlay p {
+        width: 100%;
+        font-size: 0.9rem;
+        position:absolute;
+        top: 100px; /* Adjust paragraph font size */
+      }
+    }
+    .container-custom {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .container-custom img {
+      max-width: 300px;
+      height: 150px;
+      border-radius: 8px;
+    }
+    .content {
+      flex: 1;
+      margin-left: 20px;
+    }
+    .content h1 {
+      font-size: 1.5rem;
+    }
+    .content h4 {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+    .content p {
+      margin-bottom: 10px;
+    }
+    .btn-learn-more {
+      margin-top: 10px;
+    }
+    /* Media Query for Mobile */
+    @media (max-width: 768px) {
+      .container-custom {
+        flex-direction: column; /* Stack the image and content vertically */
+        text-align: center; /* Center align text for mobile */
+      }
+      .container-custom img {
+        max-width: 100%; /* Make image full width on smaller screens */
+        height: auto;
+      }
+      .content {
+        margin-left: 0; /* Remove margin when stacked */
+        margin-top: 20px; /* Add spacing above the content */
+      }
+    }
+    /* Footer Styling */
+    .footer {
+      background-color: hwb(90 94% 5%);
+      color: hsl(0, 0%, 1%);
+      padding: 2rem;
+      text-align: center;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+    .footer-section {
+      flex: 1;
+      margin: 1rem;
+      min-width: 200px;
+    }
+    .footer-section h3 {
+      color: hsl(0, 0%, 3%);
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .footer-section p, .footer-section ul {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-section ul li {
+      margin: 0.5rem 0;
+    }
+    .footer-section ul li a {
+      color: #080808;
+      text-decoration: none;
+    }
+    .footer-section ul li a:hover {
+      color: rgb(2, 2, 2);
+    }
+    /* Social Media Icons */
+    .footer-section.social a {
+      color: hsl(0, 0%, 3%);
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      text-decoration: none;
+    }
+    .footer-section.social a:hover {
+      color: hsl(0, 0%, 2%);
+    }
+    /* Footer bottom text */
+    .footer-bottom {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: hsl(0, 0%, 2%);
+    }
+</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
+  <div class="container-fluid">
+    <!-- Logo and Brand Name -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/logo.jpeg" alt="Logo"> <!-- Replace "logo.png" with your image source -->
+      <span>work horse</span>
+    </a>
+    <!-- Toggler for mobile view -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutus.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="servicess.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact us.html">Contact Us</a>
+        </li>
+      </ul>
+      <!-- Search Button -->
+      <form class="d-flex ms-3">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- Banner Section -->
+<div class="banner-container mt-4">
+    <div class="overlay"></div> <!-- Color overlay -->
+    <div class="banner-content">
+      <h1>Welcome to Agri tech!</h1>
+      <p>Agritech combines advanced technology with agriculture to boost productivity, sustainability, and efficiency in farming. Through innovations like precision farming, data analytics, and automation, agritech helps farmers manage resources better and improve crop yields.</p>
+      <button class="btn btn-custom mt-3">About Us</button>
+    </div>
+  </div>
+
+  <!-- Content Section (optional, can be adjusted as needed) -->
+  <div class="container content-image-container mt-4">
+    <!-- Additional content can go here -->
+  </div>
+  <!-- Content and Image Section -->
+  <div class="container content-image-container">
+    <!-- Left Content Section -->
+    <div class="left-content">
+      <h1 style="color: chartreuse;">The way we work</h1>
+      <h2>We live for green, work for green</h2>
+      <p class="lead">Agritech combines advanced technology with agriculture to boost productivity, sustainability, and efficiency in farming.</p>
+  
+      <!-- Additional Subheading and Content -->
+      <div class="tick-button-container">
+        <span class="tickmark-icon">&#10003;</span> <!-- Tickmark icon -->
+        <h4 class="mt-4">Our work culture</h4>
+      </div>
+      <p>Our work culture fosters collaboration, innovation, and growth, empowering each team member to thrive and contribute meaningfully.</p>
+  
+      <!-- Contact Us Button -->
+      <button style="background-color: chartreuse;" class="btn btn-outline-secondary mt-3">Contact Us</button>
+    </div>
+  
+    <!-- Right Image Section -->
+    <div class="right-image">
+      <img src="images/bs5.jpg" alt="Description of image"> <!-- Replace 'image.jpg' with your image path -->
+    </div>
+  </div>
+   <!-- Image Container with Overlay Text -->
+  <div class="container-fluid">
+    <div class="image-container">
+      <img src="images/bs11.avif" alt="Description of image"> <!-- Replace with your image -->
+      <div class="text-overlay">
+        <div class="horizontal-line"></div>
+        <h1>Our Partners</h1>
+        <p></p>
+      </div>
+      <div class="pattern-names">
+        <ul class="list-unstyled d-flex flex-wrap justify-content-center">
+          <li class="mx-3" style="font-style: oblique;">Netflix</li>
+          <li class="mx-3" style="font-style: oblique;">Rice Band</li>
+          <li class="mx-3" style="font-style: oblique;">Indian Gate</li>
+          <li class="mx-3" style="font-style: oblique;">Flor Style</li>
+          <li class="mx-3" style="font-style: oblique;">Lalitha Brand</li>
+          <li class="mx-3" style="font-style: oblique;">Aashirvaad</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Heading at the top -->
+  <div class="container text-center my-5">
+    <h2>Our Partners and Collaborations</h2>
+    <p>Explore the individuals and organizations we work with to create impactful solutions.</p>
+  </div>
+
+  <!-- First Container -->
+  <div class="container-custom">
+    <div class="content">
+      <h1>Krish Vamshi</h1>
+      <p>We collaborate with industry-leading partners to bring you innovative solutions and exceptional service, ensuring the highest quality for our clients.</p>
+      <button class="btn btn-primary btn-learn-more">Learn More</button>
+    </div>
+    <img  style="height: 250px; width: 300px;" src="images/bs13.avif" alt="Krish Vamshi"> <!-- Replace with your right image -->
+  </div>
+
+  <!-- Second Container -->
+  <div class="container-custom">
+    <img style="height: 230px; width: 300px; position: relative; top: 15px;" src="images/bs14.avif" alt="Rithu Varma"> <!-- Replace with your image -->
+    <div class="content">
+      <h1>Rithu Varma</h1>
+      <p>We collaborate with industry-leading partners to bring you innovative solutions and exceptional service, ensuring the highest quality for our clients.</p>
+      <button class="btn btn-primary btn-learn-more">Learn More</button>
+    </div>
+  </div>
+</div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content row">
+      <!-- Company Information -->
+      <div class="footer-section about col-12 col-md-4">
+        <h3>About Work Horse</h3>
+        <p>Work Horse is dedicated to transforming agriculture with sustainable practices and innovative solutions. Join us in building a better future for farming and food security.</p>
+      </div>
+  
+      <!-- Useful Links -->
+      <div class="footer-section links col-12 col-md-4">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Social Media Links -->
+      <div class="footer-section social col-12 col-md-4">
+        <h3>Follow Us</h3>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  
+    <!-- Footer bottom section -->
+    <div class="footer-bottom">
+      &copy; 2024 Work Horse | All Rights Reserved
+    </div>
+  </div>
+</footer>
+  
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.7/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
